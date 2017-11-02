@@ -8,5 +8,5 @@ use Illuminate\Http\Request;
 
 
 class TodoController extends Controller{
-  // Method here
+
 }

@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
-class TodoController extends Controller{
+class TodosController extends Controller{
   public function list(){
     $todos  = Todos::all();
     return response()->json($todos);

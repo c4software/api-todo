@@ -15,7 +15,11 @@ class TodoController extends Controller{
 
   public function saveTodo(Request $request){
     $todo = Todos::create($request->all());
-    return response()->json($todo);
+    if($todo){
+      return response()->json("success");
+    }else{
+      return response()->json("error");      
+    }
   }
 
   public function markAsDone($id){

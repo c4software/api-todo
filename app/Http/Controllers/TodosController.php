@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 
 class TodoController extends Controller{
-  public function liste(){
+  public function list(){
     $todos  = Todos::all();
     return response()->json($todos);
   }
@@ -18,7 +18,7 @@ class TodoController extends Controller{
     if($todo){
       return response()->json("success");
     }else{
-      return response()->json("error");      
+      return response()->json("error");
     }
   }
 

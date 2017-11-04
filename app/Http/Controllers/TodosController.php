@@ -13,7 +13,14 @@ class TodosController extends Controller{
     return response()->json($todos);
   }
 
+  public function saveTodoBis(Request $request){
+      // Just to illustrate the two way of creating item in database
+      $todo = Todos::create($request->all());
+      return response()->json($todo);
+  }
+
   public function saveTodo(Request $request){
+    // Just to illustrate the two way of creating item in database
     $texte = $request->input('texte');
 
     if($texte){

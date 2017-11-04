@@ -14,8 +14,13 @@ class TodosController extends Controller{
   }
 
   public function saveTodo(Request $request){
-    $todo = Todos::create($request->all());
-    if($todo){
+    $texte = $request->input('texte');
+
+    if($texte){
+      $todo = new Todos;
+      $todo->texte = $texte;
+      $todo->termine = 0;
+      $todo->save();
       return response()->json("success");
     }else{
       return response()->json("error");
